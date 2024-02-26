@@ -1,1 +1,1 @@
-sudo pacman -Sy git neovim dunst picom 
+sudo pacman -Sy git neovim dunst picom flameshot rofi
