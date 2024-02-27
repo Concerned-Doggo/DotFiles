@@ -89,6 +89,12 @@ keys = [
     Key([mod, "shift"], "l", lazy.spawn("betterlockscreen -l"), desc="lock screen"),
     # flameshot screenshot taker
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
+
+    Key(["mod1"], "Tab", lazy.spawn("rofi -show window"), desc="show all windows"),
+
+    Key([mod], "F3", lazy.spawn('sh -c ~/.config/qtile/scripts/volume.sh'), desc="Screenshot"),
+
+    Key([mod, "shift"], "h", lazy.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"), desc="clipboard"),
 ]
 
 
@@ -268,7 +274,7 @@ screens = [
                     border=colors[9],
                     highlight_method="block",
                     max_title_width=150,
-                    spacing=8,
+                    spacing=10,
                     fontsize=14,
                     unfocused_border=colors[8],
                     # opacity=0.8,
