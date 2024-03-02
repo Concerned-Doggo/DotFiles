@@ -156,6 +156,14 @@ def lower_left_triangle(bg_color, fg_color):
         background=bg_color,
         foreground=fg_color)
 
+def lower_right_triangle(bg_color, fg_color):
+    return TextBox(
+            text='\ue0b8',
+            padding=0,
+            margin=0,
+            fontsize=40,
+            background=bg_color,
+            foreground=fg_color)
 
 def left_arrow(bg_color, fg_color):
     return TextBox(
@@ -215,6 +223,7 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
+    layout.Floating(border_focus=["#add8e6", "#add8e6"], border_width=2, margin=2, rounded_borders=1)
 ]
 
 #colors for the bar
@@ -251,7 +260,7 @@ screens = [
                 widget.Spacer(background=colors[0], length=5),
                 left_half_circle(colors[2], colors[0]),
                 widget.Spacer(background=colors[2], length=5),
-                widget.Image(filename='~/Pictures/happy.png'),
+                widget.Image(filename='~/.config/qtile/wallpapers/happy.png'),
 
                 widget.Spacer(background=colors[2], length=5),
 
@@ -262,13 +271,13 @@ screens = [
                                 urgent_text=colors[4]),
 
                 lower_left_triangle(colors[2], colors[9]),
-                widget.CurrentLayout(background = colors[9], foreground=colors[0], margin=0, padding=0),
-                widget.CurrentLayoutIcon(background=colors[9], foreground=colors[1]),
+                widget.CurrentLayout(background = colors[9], foreground=colors[1], margin=0, padding=5),
+                widget.CurrentLayoutIcon(background=colors[9], foreground=colors[2]),
                 lower_left_triangle(colors[9], colors[1]),
 
                 # right_arrow(colors[1], colors[2]),
                 widget.TaskList(
-                    padding=0,
+                    padding=3,
                     background=colors[1],
                     foreground=colors[1],
                     border=colors[9],
@@ -276,12 +285,12 @@ screens = [
                     max_title_width=150,
                     spacing=10,
                     fontsize=14,
-                    unfocused_border=colors[8],
+                    unfocused_border=colors[2],
                     # opacity=0.8,
                     txt_floating="🗗 ",
                     txt_maximized="🗖 ",
                     txt_minimized="🗕 ",
-                    urgent_border="colors[1]"
+                    urgent_border=colors[1]
                 ),
 
                 # arrow_left,
@@ -310,35 +319,41 @@ screens = [
                 #
                 widget.Spacer(background=colors[1], length=2),
 
-                left_half_circle(colors[0], colors[1]),
-                widget.Net(format='󰀂 {up}  {down}', background=colors[0]),
-                right_half_circle(colors[0], colors[1]),
+                # left_half_circle(colors[0], colors[1]),
+                lower_left_triangle(colors[1], colors[9]),
+                widget.Net(format='󰀂 {up}  {down}', background=colors[9], foreground=colors[1]),
+                # right_half_circle(colors[0], colors[1]),
+                lower_left_triangle(colors[9], colors[2]),
 
                 # left_arrow(colors[0], colors[3]),
-                widget.Spacer(background=colors[1], length=2),
+                # widget.Spacer(background=colors[1], length=2),
 
-                left_half_circle(colors[3], colors[1]),
+                # left_half_circle(colors[3], colors[1]),
                 widget.OpenWeather(
                     location="mumbai",
-                    background=colors[3],
+                    background=colors[2],
+                    foreground=colors[0],
                     format='{location_city}:{temp}  {icon}',
                     app_key=os.environ.get('APIKEY'),
                 ),
-                right_half_circle(colors[3], colors[1]),
+                # right_half_circle(colors[2], colors[1]),
+                lower_left_triangle(colors[2], colors[9]),
 
-                widget.Spacer(background=colors[1], length=2),
+                # widget.Spacer(background=colors[1], length=2),
 
                 # left_arrow(colors[3], colors[9]),
-                left_half_circle(colors[9], colors[1]),
-                widget.Clock(format=" %I:%M %p %a %d", background=colors[9]),
-                right_half_circle(colors[9], colors[1]),
+                # left_half_circle(colors[9], colors[1]),
+                widget.Clock(format=" %I:%M %p %a %d", background=colors[9], foreground=colors[1]),
+                # right_half_circle(colors[9], colors[1]),
+                lower_left_triangle(colors[9], colors[6]),
 
-                widget.Spacer(background=colors[1], length=2),
+                # widget.Spacer(background=colors[1], length=2),
 
                 # widget.Battery(),
                 # left_arrow(colors[9], colors[6]),
-                left_half_circle(colors[6], colors[1]),
-                widget.QuickExit(background=colors[6], fmt=''),
+                # lower_left_triangle(colors[6], colors[1]),
+                widget.QuickExit(background=colors[6], fmt='', foreground=colors[0], 
+                                 countdown_format='[ {} seconds ]'),
                 # widget.Spacer(background=colors[6], length=10),
                 right_half_circle(colors[6], colors[0]),
 

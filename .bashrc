@@ -80,8 +80,10 @@ On_IWhite='\033[0;107m'   # White
 
 alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
-
 alias grep='grep --color=auto'
+alias showimg='kitten icat'
+
+
 PS1="${BIBlue}  ${Yellow}\W ${Green} ${White}"
 
 export EDITOR='nvim'
