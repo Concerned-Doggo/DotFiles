@@ -25,11 +25,6 @@
 # SOFTWARE.
 # from dotenv import load_dotenv
 # load_dotenv()
-# #bd93fa
-# #44445c
-# #2c2c34
-# #040404
-# #2c1848
 #
 
 import os
@@ -80,7 +75,6 @@ keys = [
     Key([mod], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control", "shift"], "q", lazy.shutdown(), desc='powermenu'),
-    Key([mod], "p", lazy.spawn("rofi -show drun"), desc="Spawn a rofi command using a prompt widget"),
     Key([mod], "d", lazy.spawn("discord"), desc="Spawn discord"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Spawn firefox"),
     Key([mod], "f", lazy.spawn("dolphin"), desc="Spawn File Manager"),
@@ -90,11 +84,16 @@ keys = [
     # flameshot screenshot taker
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
 
-    Key(["mod1"], "Tab", lazy.spawn("rofi -show window"), desc="show all windows"),
 
-    Key([mod], "F3", lazy.spawn('sh -c ~/.config/qtile/scripts/volume.sh'), desc="Screenshot"),
+    # volume related 
+    Key([mod], "F3", lazy.spawn('sh -c ~/.config/qtile/scripts/volume/up.sh'), desc="increase volume "),
+    Key([mod], "F2", lazy.spawn('sh -c ~/.config/qtile/scripts/volume/down.sh'), desc="decrease volume"),
+    Key([mod], "F4", lazy.spawn('sh -c ~/.config/qtile/scripts/volume/mute.sh'), desc="mute volume "),
 
+    # rofi related keys
+    Key([mod], "p", lazy.spawn("rofi -show drun"), desc="Spawn a rofi command using a prompt widget"),
     Key([mod, "shift"], "h", lazy.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"), desc="clipboard"),
+    Key(["mod1"], "Tab", lazy.spawn("rofi -show window"), desc="show all windows"),
 ]
 
 

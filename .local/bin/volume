@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Increment, decrement, or mute the volume using Pipewire and send a notification
 

@@ -1,1 +1,1 @@
-sudo pacman -Sy git neovim dunst picom rofi rofi-emoji
+sudo pacman -Sy git neovim dunst picom rofi rofi-emoji pamixer stow
