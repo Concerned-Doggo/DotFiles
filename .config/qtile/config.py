@@ -74,7 +74,7 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control", "shift"], "q", lazy.shutdown(), desc='powermenu'),
+    Key([mod, "control", "shift"], "q", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu'),
     Key([mod], "d", lazy.spawn("discord"), desc="Spawn discord"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Spawn firefox"),
     Key([mod], "f", lazy.spawn("dolphin"), desc="Spawn File Manager"),
@@ -94,6 +94,7 @@ keys = [
     Key([mod], "p", lazy.spawn("rofi -show drun"), desc="Spawn a rofi command using a prompt widget"),
     Key([mod, "shift"], "h", lazy.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"), desc="clipboard"),
     Key(["mod1"], "Tab", lazy.spawn("rofi -show window"), desc="show all windows"),
+    Key([mod, "shift"], "c", lazy.spawn("rofi -show calc -modi calc -no-show-match -no-sort"), desc="calculator"),
 ]
 
 
@@ -115,7 +116,7 @@ groups = [
         layout="column"
     ),
     Group('2', label="", layout="column", matches=[Match(wm_class="kitty")]),
-    Group('3', label="󰙯", layout="column", matches=[Match(wm_class="discord")]),
+    Group('3', label="󰙯", layout="column", matches=[Match(wm_class="libreOffice")]),
     Group('4', label="", layout="column", matches=[Match(wm_class="dolphin")]),
     Group('5', label="󰒓", layout="column", matches=[Match(wm_class="Bitwarden")]),
 #     Group('6', label="六", layout="monadtall"),

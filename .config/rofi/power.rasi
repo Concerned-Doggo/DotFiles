@@ -2,18 +2,18 @@
 
 * {
   /* Default background color */
-  background-color: #282738;
-  text-color:       #CAA9E0;
+  background-color: #4C566A;
+  text-color:       #4C566A;
   font: "JetBrainsMono Bold 10";
 }
 
 
 window {
-  border-color: #282738;
+  border-color: #2E3440;
   border:       5px;
   border-radius: 10px;
-  background-color: #282738;
-  width: 300px;
+  background-color: #4C566A;
+  width: 500px;
 }
 
 mainbox {
@@ -23,7 +23,7 @@ mainbox {
 
 message {
     enabled:                     true;
-    margin:                      0px 50px;
+    margin:                      10px 50px;
     padding:                     15px;
     border:                      0px solid;
     border-radius:               15px;
@@ -65,18 +65,18 @@ element,element-text,element-icon, button {
 
 listview, message {
   padding: 0.5em;
-  border-color: #282738;
+  border-color: #2E3440;
   border:        5px;
-  border-radius: 10px;
-  background-color: #282738;
+  border-radius: 20px;
+  background-color: #D08770;
   columns: 1;
   lines: 4;
 }
 listview {
   border:       5px 5px 5px 5px;
   border-radius: 10px 10px 10px 10px;
-  background-color: #353446;
-  border-color:     #282738;
+  background-color: #2E3440;
+  border-color:     #2E3440;
   font: "JetBrains Mono Medium";
   scrollbar: false;
   
@@ -85,102 +85,102 @@ listview {
 
 element {
     border:  5px;
-    border-radius: 5px;
-    padding: 5px;
-    border-color: #353446;
+    border-radius: 15px;
+    padding: 5px 95px;
+    border-color: #2E3440;
 }
 element-text {
-    background-color: #353446;
-    text-color:       #FFFFFF;
+    background-color: #4C566A;
+    text-color:       #D08770;
     font: "JetBrains Mono Medium";
     margin:   0px 50px;
 }
 
 element normal.normal {
-    background-color: #353446;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    text-color:       #D08770;
 }
 element.normal.urgent {
-    background-color: #353446;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    text-color:       #D08770;
 }
 element.normal.active {
-    background-color: #353446;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    text-color:       #D08770;
 }
 element.selected.normal {
-    background-color: #CAA9E0;
-    border-color: #CAA9E0;
-    text-color:       #CAA9E0;
+    background-color: #D08770;
+    border-color: #2E3440;
+    text-color:       #4C566A;
 }
 element.selected.urgent {
-    background-color: #CAA9E0;
-    border-color: #CAA9E0;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    border-color: #2E3440;
+    text-color:       #D08770;
 }
 element.selected.active {
-    background-color: #CAA9E0;
-    border-color: #CAA9E0;
-    text-color:       #CAA9E0;
+    background-color: #D08770;
+    border-color: #2E3440;
+    text-color:       #4C566A;
 }
 element.alternate.normal {
-    background-color: #353446;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    text-color:       #D08770;
 }
 element.alternate.urgent {
-    background-color: #353446;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    text-color:       #D08770;
 }
 element.alternate.active {
-    background-color: #353446;
-    text-color:       #CAA9E0;
+    background-color: #4C566A;
+    text-color:       #D08770;
 }
 
 
 element-text.selected.normal {
-    background-color: #CAA9E0;
-    border-color: #CAA9E0;
-    text-color:       #282738;
+    background-color: #D08770;
+    border-color: #2E3440;
+    text-color:       #4C566A;
     font: "JetBrains Mono Medium";
 }
 element-text.selected.urgent {
-    background-color: #CAA9E0;
-    border-color: #CAA9E0;
-    text-color:       #282738;
+    background-color: #D08770;
+    border-color: #2E3440;
+    text-color:       #4C566A;
     font: "JetBrains Mono Medium";
 }
 element-text.selected.active {
-    background-color: #CAA9E0;
-    border-color: #CAA9E0;
-    text-color:       #282738;
+    background-color: #D08770;
+    border-color: #2E3440;
+    text-color:       #4C566A;
     font: "JetBrains Mono Medium";
 }
 
 
 button {
-    text-color: #CAA9E0;
+    text-color: #4C566A;
     border:       0px 0px 5px ;
-    border-color: #282738;
+    border-color: #2E3440;
     border-radius:    10px 10px 0 0;
-    background-color: #282738;
+    background-color: #4C566A;
     horizontal-align: 0.5;
 }
 button selected.normal {
-    text-color: #CAA9E0;
+    text-color: #D08770;
     margin: 0px;
     padding: 0px;
     border:     5px 5px 5px 5px ;
-    border-color: #282738;
+    border-color: #2E3440;
     border-radius:    10px 10px 10px 10px;
-    background-color: #353446;
+    background-color: #4C566A;
 }
 
 entry {
     placeholder: "Search here";
-    placeholder-color: #282738;
-    border-color: #353446;
-    background-color: #353446;
+    placeholder-color: #2E3440;
+    border-color: #4C566A;
+    background-color: #4C566A;
     border:        10px;
     border-radius: 2px 2px 2px 2px;
-    text-color: #CAA9E0;
+    text-color: #D08770;
   }
