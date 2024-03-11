@@ -132,18 +132,22 @@ element.selected.active {
     text-color:       #D08770;
 }
 element.alternate.normal {
-    background-color: #4C566A;
+    background-color: #3C4754;
     text-color:       #D08770;
+    border-color: #3C4754;
 }
 element.alternate.urgent {
-    background-color: #4C566A;
+    background-color: #3C4754;
     text-color:       #D08770;
 }
 element.alternate.active {
-    background-color: #4C566A;
+    background-color: #3C4754;
     text-color:       #D08770;
 }
-
+element-text.alternate.normal {
+  background-color: #3C4754;
+  border-color: #3C4754;
+}
 
 element-text.selected.normal {
     background-color: #D08770;
@@ -198,8 +202,8 @@ button selected.normal {
 entry {
     placeholder: "Search here";
     placeholder-color: #4C566A;
-    border-color: #2E3440;
-    background-color: #2E3440;
+    border-color: #232B2B;
+    background-color: #232B2B;
     border:        10px;
     border-radius: 2px 2px 2px 2px;
     text-color: #D08770;
