@@ -1,9 +1,9 @@
 # DotFiles
 ### Home
-![Desktop Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/image/desktop.png)
+![Desktop Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/images/desktop.png)
 
 ### Rofi
-![Rofi Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/image/rofi_screen.png)
+![Rofi Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/images/rofi_screen.png)
 
 ### Power Menu
-![Power Menu Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/image/rofi_powermenu.png)
+![Power Menu Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/images/rofi_powermenu.png)
