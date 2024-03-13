@@ -9,10 +9,10 @@
 ![Power Menu Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/images/rofi_powermenu.png)
 
 ## To install
-``
+```
 $ cd DotFiles
-``
+```
 
-``
+```
 $ stow .
-``
+```
