@@ -11,8 +11,15 @@
 ## To install
 ```
 $ cd DotFiles
+$ stow .
+```
+#### Allowing volume, powermenu and other scipts to run
+```
+$ chmod u+x ./.config/qtile/scripts/allowScripts.sh
+$ ./.config/qtile/scripts/allowScripts.sh
 ```
 
+#### installing some useful apps/software
 ```
-$ stow .
+$ ./.config/qtile/scripts/install.sh
 ```
