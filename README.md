@@ -9,13 +9,11 @@
 ![Power Menu Image](https://github.com/Concerned-Doggo/DotFiles/blob/main/images/rofi_powermenu.png)
 
 ## To install
-``
-prerequisite stow
-install using pacman 
+
+#### install stow using pacman 
 ```
 $ pacman -Sy stow
 ```
-``
 ```
 $ cd DotFiles
 $ stow .
