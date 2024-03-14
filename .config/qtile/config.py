@@ -28,7 +28,7 @@
 #
 
 import os
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 import subprocess
@@ -98,7 +98,7 @@ keys = [
 ]
 
 
-def search():
+def Search():
     qtile.cmd_spawn("rofi -show drun")
 
 def power():
@@ -244,10 +244,10 @@ colors = init_colors()
 #colors for the bar
 
 widget_defaults = dict(
-    font="ComicShannsMono Nerd Font",
+    font="ComicShannsMono Nerd Font Bold",
     fontsize=12,
     padding=5,
-    foreground=colors[1],
+    foreground=colors[0],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -271,20 +271,20 @@ screens = [
                                 urgent_text=colors[4]),
 
                 lower_left_triangle(colors[2], colors[9]),
-                widget.CurrentLayout(background = colors[9], foreground=colors[1], margin=0, padding=5),
-                widget.CurrentLayoutIcon(background=colors[9], foreground=colors[2]),
+                widget.CurrentLayout(background = colors[9],  margin=0, padding=5),
+                widget.CurrentLayoutIcon(background=colors[9], ),
                 lower_left_triangle(colors[9], colors[1]),
 
                 # right_arrow(colors[1], colors[2]),
                 widget.TaskList(
-                    padding=3,
+                    padding_x=8,
                     background=colors[1],
-                    foreground=colors[1],
                     border=colors[9],
                     highlight_method="block",
-                    max_title_width=150,
+                    max_title_width=200,
                     spacing=10,
                     fontsize=14,
+                    font="ComicShannsMono Nerd Font Regular",
                     unfocused_border=colors[2],
                     # opacity=0.8,
                     txt_floating="🗗 ",
@@ -317,11 +317,34 @@ screens = [
                 #                     update_interval=1000,
                 #                     ),
                 #
-                widget.Spacer(background=colors[1], length=2),
+
+                # SEARCH LOGO
+                left_half_circle(colors[9], colors[1]),
+                widget.Image(
+                    filename='~/.config/qtile/wallpapers/search.png',
+                    margin=2,
+                    background=colors[9],
+                    mouse_callbacks={"Button1": Search},
+                ),
+                widget.TextBox(
+                    fmt='Search',
+                    background=colors[9],
+                    font="JetBrains Mono Bold",
+                    fontsize=13,
+                    mouse_callbacks={"Button1": Search},
+                ),
+                right_half_circle(colors[9], colors[1]),
+
+                # spacer to make SEARCH LOGO in middle
+                widget.Spacer(background=colors[1], length=bar.STRETCH),
 
                 # left_half_circle(colors[0], colors[1]),
                 lower_left_triangle(colors[1], colors[9]),
-                widget.Net(format='󰀂 {up}  {down}', background=colors[9], foreground=colors[1]),
+                widget.Net(
+                        format='󰀂   {up}  {down}',
+                        background=colors[9],
+                        font="JetBrains Mono Bold"
+                        ),
                 # right_half_circle(colors[0], colors[1]),
                 lower_left_triangle(colors[9], colors[2]),
 
@@ -332,7 +355,6 @@ screens = [
                 widget.OpenWeather(
                     location="mumbai",
                     background=colors[2],
-                    foreground=colors[0],
                     format='{location_city}:{temp}  {icon}',
                     app_key=os.environ.get('APIKEY'),
                 ),
@@ -343,25 +365,33 @@ screens = [
 
                 # left_arrow(colors[3], colors[9]),
                 # left_half_circle(colors[9], colors[1]),
-                widget.Clock(format=" %I:%M %p %a %d", background=colors[9], foreground=colors[1]),
+                widget.Clock(
+                        format=" %I:%M %p %a %d",
+                        background=colors[9],
+                        foreground=colors[0],
+                        font="ComicShannsMono Nerd Font Bold"
+                        ),
                 # right_half_circle(colors[9], colors[1]),
-                lower_left_triangle(colors[9], colors[6]),
+                lower_left_triangle(colors[9], colors[2]),
 
                 # widget.Spacer(background=colors[1], length=2),
 
                 # widget.Battery(),
                 # left_arrow(colors[9], colors[6]),
                 # lower_left_triangle(colors[6], colors[1]),
-                widget.QuickExit(background=colors[6], fmt='', foreground=colors[0], 
-                                 countdown_format='[ {} seconds ]'),
-                # widget.Spacer(background=colors[6], length=10),
-                right_half_circle(colors[6], colors[0]),
+                widget.Image(
+                    filename='~/.config/qtile/wallpapers/shutdown.png',
+                    background=colors[2],
+                    mouse_callbacks={"Button1":power},
+                ),
+               # widget.Spacer(background=colors[6], length=10),
+                right_half_circle(colors[2], colors[0]),
 
                 widget.Spacer(background=colors[0], length=3),
 
             ],
             # define bar height
-            23,
+            24,
             border_width=[1, 0, 2, 0],  # Draw top and bottom borders
             border_color=["#4c566a", "#4c566a", "#add8e6", "#add8e6"],  # Borders are lightblue
             background="#4c566a",
