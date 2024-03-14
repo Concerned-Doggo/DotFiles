@@ -132,7 +132,7 @@ from libqtile.widget.textbox import TextBox
 def left_half_circle(fg_color, bg_color):
     return TextBox(
         text='\uE0B6',
-        fontsize=20,
+        fontsize=22,
         foreground=fg_color,
         background=bg_color,
         padding=0)
@@ -141,7 +141,7 @@ def left_half_circle(fg_color, bg_color):
 def right_half_circle(fg_color, bg_color):
     return TextBox(
         text='\uE0B4',
-        fontsize=20,
+        fontsize=23,
         background=bg_color,
         foreground=fg_color,
         padding=0)
@@ -260,7 +260,7 @@ screens = [
                 widget.Spacer(background=colors[0], length=5),
                 left_half_circle(colors[2], colors[0]),
                 widget.Spacer(background=colors[2], length=5),
-                widget.Image(filename='~/.config/qtile/wallpapers/happy.png'),
+                widget.Image(filename='~/.config/qtile/assets/happy.png'),
 
                 widget.Spacer(background=colors[2], length=5),
 
@@ -318,21 +318,40 @@ screens = [
                 #                     ),
                 #
 
-                # SEARCH LOGO
                 left_half_circle(colors[9], colors[1]),
+                widget.Clock(
+                        format=" %I:%M %p %a %d",
+                        background=colors[9],
+                        foreground=colors[0],
+                        font="ComicShannsMono Nerd Font Bold"
+                        ),
+
+                widget.Spacer(background=colors[9], length=4),
+                lower_right_triangle(colors[1], colors[9]),
+                widget.Spacer(background=colors[1], length=7),
+
+                # SEARCH LOGO
                 widget.Image(
-                    filename='~/.config/qtile/wallpapers/search.png',
+                    filename='~/.config/qtile/assets/search.png',
                     margin=2,
-                    background=colors[9],
+                    background=colors[1],
                     mouse_callbacks={"Button1": Search},
                 ),
                 widget.TextBox(
                     fmt='Search',
-                    background=colors[9],
+                    background=colors[1],
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     mouse_callbacks={"Button1": Search},
                 ),
+
+                widget.Spacer(background=colors[1], length=7),
+                lower_left_triangle(colors[1], colors[9]),
+                widget.Spacer(background=colors[9], length=7),
+
+                # updates widget
+                widget.CheckUpdates(background=colors[9], display_format='{updates}  '),
+
                 right_half_circle(colors[9], colors[1]),
 
                 # spacer to make SEARCH LOGO in middle
@@ -365,13 +384,10 @@ screens = [
 
                 # left_arrow(colors[3], colors[9]),
                 # left_half_circle(colors[9], colors[1]),
-                widget.Clock(
-                        format=" %I:%M %p %a %d",
-                        background=colors[9],
-                        foreground=colors[0],
-                        font="ComicShannsMono Nerd Font Bold"
-                        ),
                 # right_half_circle(colors[9], colors[1]),
+
+                widget.Wallpaper(directory='~/.config/qtile/wallpapers', background=colors[9], wallpaper="~/.config/qtile/wallpapers/dark-solar.jpg"),
+
                 lower_left_triangle(colors[9], colors[2]),
 
                 # widget.Spacer(background=colors[1], length=2),
@@ -380,7 +396,7 @@ screens = [
                 # left_arrow(colors[9], colors[6]),
                 # lower_left_triangle(colors[6], colors[1]),
                 widget.Image(
-                    filename='~/.config/qtile/wallpapers/shutdown.png',
+                    filename='~/.config/qtile/assets/shutdown.png',
                     background=colors[2],
                     mouse_callbacks={"Button1":power},
                 ),
@@ -401,9 +417,9 @@ screens = [
 
         ),
             # set static wallpaper
-            wallpaper = '~/.config/qtile/wallpapers/dark-solar.jpg',
+            # wallpaper = '~/.config/qtile/wallpapers/dark-solar.jpg',
             # set wallpaper mode to 'fill' or 'stretch'
-            wallpaper_mode='fill'
+            # wallpaper_mode='fill'
     ),
 ]
 
