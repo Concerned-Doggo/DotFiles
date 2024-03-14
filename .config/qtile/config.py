@@ -277,7 +277,7 @@ screens = [
 
                 # right_arrow(colors[1], colors[2]),
                 widget.TaskList(
-                    padding_x=8,
+                    padding_x=5,
                     background=colors[1],
                     border=colors[9],
                     highlight_method="block",
