@@ -431,7 +431,7 @@ screens = [
 
         ),
             # set static wallpaper
-            # wallpaper = '~/.config/qtile/wallpapers/dark-solar.jpg',
+            # wallpaper = '~/.config/qtile/wallpapers/ds-0.jpg',
             # set wallpaper mode to 'fill' or 'stretch'
             # wallpaper_mode='fill'
     ),
