@@ -95,6 +95,7 @@ keys = [
     Key([mod, "shift"], "h", lazy.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"), desc="clipboard"),
     Key(["mod1"], "Tab", lazy.spawn("rofi -show window"), desc="show all windows"),
     Key([mod, "shift"], "c", lazy.spawn("rofi -show calc -modi calc -no-show-match -no-sort"), desc="calculator"),
+    Key([mod], "e", lazy.spawn("rofi -modi emoji -show emoji"), desc="emoji"),
 ]
 
 
@@ -350,7 +351,14 @@ screens = [
                 widget.Spacer(background=colors[9], length=7),
 
                 # updates widget
-                widget.CheckUpdates(background=colors[9], display_format='{updates}  '),
+                widget.CheckUpdates(background=colors[9],
+                                    display_format='Updates: {updates}  ',
+                                    font="JetBrains Mono Nerd Font Bold",
+                                    initial_text="Checking Updates",
+                                    colour_no_updates=colors[0],
+                                    no_update_string="Updates: 0  ",
+                                    update_interval=1000,
+                                    ),
 
                 right_half_circle(colors[9], colors[1]),
 
@@ -386,7 +394,13 @@ screens = [
                 # left_half_circle(colors[9], colors[1]),
                 # right_half_circle(colors[9], colors[1]),
 
-                widget.Wallpaper(directory='~/.config/qtile/wallpapers', background=colors[9], wallpaper="~/.config/qtile/wallpapers/dark-solar.jpg"),
+                widget.Wallpaper(
+                        directory='~/.config/qtile/wallpapers',
+                        background=colors[9],
+                        wallpaper="~/.config/qtile/wallpapers/ds-0.jpg",
+                        label="wallpaper  ",
+                        option="stretch",
+                        ),
 
                 lower_left_triangle(colors[9], colors[2]),
 

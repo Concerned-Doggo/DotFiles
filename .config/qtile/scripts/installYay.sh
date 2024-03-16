@@ -1,1 +1,1 @@
-yay -S greenclip
+yay -S rofi-greenclip
