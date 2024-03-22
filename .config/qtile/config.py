@@ -75,7 +75,7 @@ keys = [
     Key([mod], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control", "shift"], "q", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu'),
-    Key([mod], "d", lazy.spawn("discord"), desc="Spawn discord"),
+    Key([mod, "shift"], "t", lazy.spawn("telegram-desktop"), desc="Spawn telegram"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Spawn firefox"),
     Key([mod], "f", lazy.spawn("dolphin"), desc="Spawn File Manager"),
 
@@ -117,7 +117,7 @@ groups = [
         layout="column"
     ),
     Group('2', label="", layout="column", matches=[Match(wm_class="kitty")]),
-    Group('3', label="󰙯", layout="column", matches=[Match(wm_class="libreOffice")]),
+    Group('3', label="", layout="column", matches=[Match(wm_class="telegram-desktop")]),
     Group('4', label="", layout="column", matches=[Match(wm_class="dolphin")]),
     Group('5', label="󰒓", layout="column", matches=[Match(wm_class="Bitwarden")]),
 #     Group('6', label="六", layout="monadtall"),

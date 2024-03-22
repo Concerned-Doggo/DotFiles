@@ -57,6 +57,7 @@ map gl cd ~/.local
 map gD cd ~/Downloads
 map gd cd ~/Documents
 map gf cd ~/Dotfiles
+map gw cd ~/webdev
 
 
 # define a custom 'open' command
