@@ -10,5 +10,12 @@ vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 
 
--- keymaps
--- vim.api.nvim_set_keymap("n", )
+------------------------------------ keymaps
+-- to change tab
+vim.api.nvim_set_keymap("n", "<leader>b", ":BufferLinePick<CR>" ,{})
+
+-- to close current tab
+vim.api.nvim_set_keymap("n", "<leader>X", ":bd<CR>" ,{})
+
+-- to save current tab
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>" ,{})
