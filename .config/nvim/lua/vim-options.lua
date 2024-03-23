@@ -9,3 +9,6 @@ vim.cmd("set relativenumber")
 -- setting leader
 vim.g.mapleader = " "
 
+
+-- keymaps
+-- vim.api.nvim_set_keymap("n", )
