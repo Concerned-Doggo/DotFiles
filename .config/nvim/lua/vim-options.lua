@@ -19,3 +19,5 @@ vim.api.nvim_set_keymap("n", "<leader>X", ":bd<CR>" ,{})
 
 -- to save current tab
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>" ,{})
+
+-- 
