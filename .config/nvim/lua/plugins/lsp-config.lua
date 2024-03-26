@@ -1,8 +1,20 @@
 return {
   {
     "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = { "lua-language-server", "typescript-language-server", "tailwindcss-language-server" },
+    },
+
     config = function()
-      require("mason").setup()
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
     end,
   },
   {
@@ -32,7 +44,7 @@ return {
         capabilities = capabilities,
       })
       lspconfig.tailwindcss.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

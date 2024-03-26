@@ -9,6 +9,7 @@ vim.cmd("set relativenumber")
 -- setting leader
 vim.g.mapleader = " "
 
+vim.cmd("set clipboard=unnamedplus")
 
 ------------------------------------ keymaps
 -- to change tab

@@ -1,1 +1,1 @@
-yay -S rofi-greenclip
+yay -S rofi-greenclip hurl-bin
