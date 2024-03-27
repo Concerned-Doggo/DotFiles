@@ -13,12 +13,17 @@ vim.cmd("set clipboard=unnamedplus")
 
 ------------------------------------ keymaps
 -- to change tab
-vim.api.nvim_set_keymap("n", "<leader>b", ":BufferLinePick<CR>" ,{})
+vim.api.nvim_set_keymap("n", "<leader>b", ":BufferLinePick<CR>" ,{desc = "to change tab"})
 
 -- to close current tab
-vim.api.nvim_set_keymap("n", "<leader>X", ":bd<CR>" ,{})
+vim.api.nvim_set_keymap("n", "<leader>X", ":bd<CR>" ,{desc = "to close current tab"})
 
 -- to save current tab
-vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>" ,{})
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>" ,{desc = "to save current tab"})
 
--- 
+
+-- navigation key maps for nvim
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
