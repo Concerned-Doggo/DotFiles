@@ -6,13 +6,13 @@ return {
     config = function()
       local builtin = require("telescope.builtin")
       -- keybind to search through all files present in directory
-      vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+      vim.keymap.set("n", "<C-p>", builtin.find_files, {desc = "open telescope to search for files"})
 
       -- keybind to search words accross all files
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep through all buffers"})
 
       -- keybind to search all the open buffers kinda like alt-tab
-      vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+      vim.keymap.set("n", "<leader>fb", builtin.buffers, {desc = "search for open buffers"})
     end,
   },
   {

@@ -10,10 +10,16 @@
 
 ## To install
 
+#### Git Clone
+```
+$ git clone https://github.com/Concerned-Doggo/DotFiles.git
+```
+
 #### install stow using pacman 
 ```
 $ pacman -Sy stow
 ```
+
 ```
 $ cd DotFiles
 $ stow .
