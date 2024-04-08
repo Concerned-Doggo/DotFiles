@@ -56,7 +56,7 @@ map gc cd ~/.config
 map gl cd ~/.local
 map gD cd ~/Downloads
 map gd cd ~/Documents
-map gf cd ~/Dotfiles
+map gf cd ~/DotFiles
 map gw cd ~/webdev
 
 

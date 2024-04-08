@@ -9,7 +9,7 @@ return {
       vim.keymap.set("n", "<C-p>", builtin.find_files, {desc = "open telescope to search for files"})
 
       -- keybind to search words accross all files
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep through all buffers"})
+      -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep through all buffers"})
 
       -- keybind to search all the open buffers kinda like alt-tab
       vim.keymap.set("n", "<leader>fb", builtin.buffers, {desc = "search for open buffers"})
