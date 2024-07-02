@@ -84,8 +84,11 @@ alias grep='grep --color=auto'
 alias showimg='kitten icat'
 
 
+
 PS1="${BIBlue}  ${Yellow}\W ${Green} ${White}"
 
+export PATH="$HOME/DotFiles/.config/tmux/plugins/tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
 export EDITOR='nvim'
 export VISUAL='nvim'
 
