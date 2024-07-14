@@ -258,9 +258,9 @@ screens = [
         top=bar.Bar(
             [
                 # TextBox(text='', foreground=colors[9], fontsize=16),
-                widget.Spacer(background=colors[0], length=5),
+                widget.Spacer(background=colors[0], length=3),
                 left_half_circle(colors[2], colors[0]),
-                widget.Spacer(background=colors[2], length=5),
+                widget.Spacer(background=colors[2], length=3),
                 widget.Image(filename='~/.config/qtile/assets/happy.png'),
 
                 widget.Spacer(background=colors[2], length=5),
@@ -272,19 +272,19 @@ screens = [
                                 urgent_text=colors[4]),
 
                 lower_left_triangle(colors[2], colors[9]),
-                widget.CurrentLayout(background = colors[9],  margin=0, padding=5),
+                widget.CurrentLayout(background = colors[9],  margin=0, padding=2),
                 widget.CurrentLayoutIcon(background=colors[9], ),
                 lower_left_triangle(colors[9], colors[1]),
 
                 # right_arrow(colors[1], colors[2]),
                 widget.TaskList(
-                    padding_x=5,
+                    padding_x=1,
                     background=colors[1],
                     border=colors[9],
                     highlight_method="block",
                     max_title_width=200,
                     spacing=10,
-                    fontsize=14,
+                    fontsize=10,
                     font="ComicShannsMono Nerd Font Regular",
                     unfocused_border=colors[2],
                     # opacity=0.8,
@@ -421,7 +421,7 @@ screens = [
 
             ],
             # define bar height
-            24,
+            22,
             border_width=[1, 0, 2, 0],  # Draw top and bottom borders
             border_color=["#4c566a", "#4c566a", "#add8e6", "#add8e6"],  # Borders are lightblue
             background="#4c566a",

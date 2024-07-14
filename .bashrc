@@ -91,6 +91,7 @@ export PATH="$HOME/DotFiles/.config/tmux/plugins/tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
 export EDITOR='nvim'
 export VISUAL='nvim'
+export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 
 setxkbmap -option caps:swapescape
 setxkbmap -layout us
