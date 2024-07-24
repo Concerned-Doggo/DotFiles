@@ -105,6 +105,12 @@ def Search():
 def power():
     qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/power")
 
+def lock():
+    qtile.cmd_spawn("betterlockscreen -l")
+
+def Wifi():
+    qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/rofi-wifi-menu")
+
 # groups = [Group(i) for i in '1234']
 # groups = [Group(f"{i+1}", label="󰏃") for i in range(5)]
 groups = [
@@ -362,16 +368,25 @@ screens = [
 
                 right_half_circle(colors[9], colors[1]),
 
+
                 # spacer to make SEARCH LOGO in middle
                 widget.Spacer(background=colors[1], length=bar.STRETCH),
 
                 # left_half_circle(colors[0], colors[1]),
-                lower_left_triangle(colors[1], colors[9]),
+                lower_left_triangle(colors[1], colors[2]),
                 widget.Net(
                         format='󰀂   {up}  {down}',
-                        background=colors[9],
+                        background=colors[2],
                         font="JetBrains Mono Bold"
                         ),
+
+                lower_left_triangle(colors[2], colors[9]),
+
+                widget.Wlan(
+                    format='󱚽 {essid} {percent:2.0%}',
+                    background=colors[9],
+                    mouse_callbacks={"Button1": Wifi},
+                ),
                 # right_half_circle(colors[0], colors[1]),
                 lower_left_triangle(colors[9], colors[2]),
 
