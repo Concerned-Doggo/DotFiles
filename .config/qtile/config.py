@@ -111,6 +111,8 @@ def lock():
 def Wifi():
     qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/rofi-wifi-menu")
 
+def Bluetooth():
+    qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/rofi-bluetooth-menu")
 # groups = [Group(i) for i in '1234']
 # groups = [Group(f"{i+1}", label="󰏃") for i in range(5)]
 groups = [
@@ -251,7 +253,7 @@ colors = init_colors()
 #colors for the bar
 
 widget_defaults = dict(
-    font="ComicShannsMono Nerd Font Bold",
+    font="JetBrainsMono Nerd Font Bold",
     fontsize=12,
     padding=5,
     foreground=colors[0],
@@ -401,7 +403,8 @@ screens = [
                     app_key=os.environ.get('APIKEY'),
                 ),
                 # right_half_circle(colors[2], colors[1]),
-                lower_left_triangle(colors[2], colors[9]),
+
+                # lower_left_triangle(colors[2], colors[9]),
 
                 # widget.Spacer(background=colors[1], length=2),
 
@@ -409,27 +412,38 @@ screens = [
                 # left_half_circle(colors[9], colors[1]),
                 # right_half_circle(colors[9], colors[1]),
 
-                widget.Wallpaper(
-                        directory='~/.config/qtile/wallpapers',
-                        background=colors[9],
-                        wallpaper="~/.config/qtile/wallpapers/ds-0.jpg",
-                        label="wallpaper  ",
-                        option="stretch",
-                        ),
-
-                lower_left_triangle(colors[9], colors[2]),
+                # widget.Wallpaper(
+                #         directory='~/.config/qtile/wallpapers',
+                #         background=colors[9],
+                #         wallpaper="~/.config/qtile/wallpapers/ds-0.jpg",
+                #         label="wallpaper  ",
+                #         option="stretch",
+                #         ),
+                #
+                # lower_left_triangle(colors[9], colors[2]),
 
                 # widget.Spacer(background=colors[1], length=2),
 
                 # widget.Battery(),
                 # left_arrow(colors[9], colors[6]),
                 # lower_left_triangle(colors[6], colors[1]),
+                lower_left_triangle(colors[2], colors[9]),
+                widget.Bluetooth(
+                    default_show_battery=True,
+                    default_text=' {connected_devices} ',
+                    format=' {percentage} {icon}',
+                    background=colors[9],
+                    mouse_callbacks={"Button1": Bluetooth}
+                ),
+
+                lower_left_triangle(colors[9], colors[2]),
+
                 widget.Image(
                     filename='~/.config/qtile/assets/shutdown.png',
                     background=colors[2],
                     mouse_callbacks={"Button1":power},
                 ),
-               # widget.Spacer(background=colors[6], length=10),
+                # widget.Spacer(background=colors[6], length=10),
                 right_half_circle(colors[2], colors[0]),
 
                 widget.Spacer(background=colors[0], length=3),
@@ -446,9 +460,9 @@ screens = [
 
         ),
             # set static wallpaper
-            # wallpaper = '~/.config/qtile/wallpapers/ds-0.jpg',
+            wallpaper = '~/.config/qtile/wallpapers/ds-2.jpg',
             # set wallpaper mode to 'fill' or 'stretch'
-            # wallpaper_mode='fill'
+            wallpaper_mode='fill'
     ),
 ]
 
