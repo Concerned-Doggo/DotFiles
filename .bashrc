@@ -82,6 +82,7 @@ alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias showimg='kitten icat'
+alias godot='~/Game/Godot/Godot_v4.2.2-stable_linux.x86_64'
 
 
 

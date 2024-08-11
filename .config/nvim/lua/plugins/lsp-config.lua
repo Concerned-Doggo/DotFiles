@@ -2,6 +2,18 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "typescript-language-server",
+        "prettierd",
+        "html-lsp",
+        "css-lsp",
+        "clangd",
+        "clang-format",
+        "tailwindcss-language-server",
+      }
+    },
     config = function()
       require("mason").setup()
     end,
@@ -30,6 +42,15 @@ return {
         capabilities = capabilities
       })
       lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.gdscript.setup({
+        capabilities = capabilities
+      })
+      lspconfig.clangd.setup({
+        on_attach = function(client, bufnr)
+          client.server_capabilities.signatureHelpProvider = false
+        end,
         capabilities = capabilities
       })
 

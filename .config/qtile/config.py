@@ -75,7 +75,6 @@ keys = [
     Key([mod], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control", "shift"], "q", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu'),
-    Key([mod, "shift"], "t", lazy.spawn("telegram-desktop"), desc="Spawn telegram"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Spawn firefox"),
     Key([mod], "f", lazy.spawn("dolphin"), desc="Spawn File Manager"),
 
@@ -83,6 +82,8 @@ keys = [
     Key([mod, "shift"], "l", lazy.spawn("betterlockscreen -l"), desc="lock screen"),
     # flameshot screenshot taker
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
+    # bluetooth menu
+    Key([mod, "shift"], "b", lazy.spawn("sh -c ~/.config/rofi/scripts/rofi-bluetooth-menu"), desc="spawn bluetooth menu"),
 
 
     # volume related 
@@ -125,9 +126,9 @@ groups = [
         layout="column"
     ),
     Group('2', label="", layout="column", matches=[Match(wm_class="kitty")]),
-    Group('3', label="", layout="column", matches=[Match(wm_class="telegram-desktop")]),
-    Group('4', label="", layout="column", matches=[Match(wm_class="dolphin")]),
-    Group('5', label="󰒓", layout="column", matches=[Match(wm_class="Bitwarden")]),
+    Group('3', label="", layout="column", matches=[Match(wm_class="libreoffice")]),
+    Group('4', label="", layout="column", matches=[Match(wm_class="thunar")]),
+    Group('5', label="󰒓", layout="column", matches=[Match(wm_class="")]),
 #     Group('6', label="六", layout="monadtall"),
 #     Group('7', label="七", layout="monadtall"),
 #     Group('8', label="八", layout="monadtall"),
