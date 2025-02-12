@@ -126,8 +126,8 @@ groups = [
         layout="column"
     ),
     Group('2', label="", layout="column", matches=[Match(wm_class="kitty")]),
-    Group('3', label="", layout="column", matches=[Match(wm_class="libreoffice")]),
-    Group('4', label="", layout="column", matches=[Match(wm_class="thunar")]),
+    Group('3', label="", layout="column", matches=[Match(wm_class="godot")]),
+    Group('4', label="", layout="column", matches=[Match(wm_class="dolphin")]),
     Group('5', label="󰒓", layout="column", matches=[Match(wm_class="")]),
 #     Group('6', label="六", layout="monadtall"),
 #     Group('7', label="七", layout="monadtall"),
@@ -461,9 +461,9 @@ screens = [
 
         ),
             # set static wallpaper
-            wallpaper = '~/.config/qtile/wallpapers/ds-2.jpg',
+            wallpaper = '~/.config/qtile/wallpapers/ds-minimal-bonfire.jpg',
             # set wallpaper mode to 'fill' or 'stretch'
-            wallpaper_mode='fill'
+            wallpaper_mode='stretch'
     ),
 ]
 

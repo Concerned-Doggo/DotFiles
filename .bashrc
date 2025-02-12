@@ -83,6 +83,9 @@ alias la='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias showimg='kitten icat'
 alias godot='~/Game/Godot/Godot_v4.2.2-stable_linux.x86_64'
+alias todo='~/webDev/GoProjects/todoCli/todoCli'
+alias CurConv='~/webDev/GoProjects/CurrConvTUI/CurrConvTUI'
+
 
 
 
@@ -93,6 +96,8 @@ eval "$(tmuxifier init -)"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
+export PATH=$PATH:$HOME/go/bin
+
 
 setxkbmap -option caps:swapescape
 setxkbmap -layout us

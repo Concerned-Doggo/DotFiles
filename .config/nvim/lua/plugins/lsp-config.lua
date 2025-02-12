@@ -12,6 +12,7 @@ return {
         "clangd",
         "clang-format",
         "tailwindcss-language-server",
+        "gopls",
       }
     },
     config = function()
@@ -35,7 +36,7 @@ return {
       lspconfig.tailwindcss.setup({
         capabilities = capabilities
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
       lspconfig.html.setup({
@@ -52,6 +53,12 @@ return {
           client.server_capabilities.signatureHelpProvider = false
         end,
         capabilities = capabilities
+      })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        cmd = {"gopls"},
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

@@ -12,7 +12,7 @@ return {
       -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep through all buffers"})
 
       -- keybind to search all the open buffers kinda like alt-tab
-      vim.keymap.set("n", "<leader>fb", builtin.buffers, {desc = "search for open buffers"})
+      vim.keymap.set("n", "<C-b>", builtin.buffers, {desc = "search for open buffers"})
     end,
   },
   {
